@@ -1,5 +1,7 @@
 fun sumValues(values: List<Int>, strategy: (Int) -> Int): Int {
-    return values.sumOf { value -> strategy(value) }
+    // OR return values.sumOf(strategy)
+    // OR values.sumOf { value -> strategy(value) }
+    return values.sumOf { strategy(it) }
 }
 
 fun sumValuesUsingPredicate(values: List<Int>, strategy: (Int) -> Boolean): Int {
