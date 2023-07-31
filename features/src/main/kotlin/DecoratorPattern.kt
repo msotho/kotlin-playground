@@ -21,11 +21,10 @@ fun main() {
     val snap = camera.snap(Color(125, 125, 125))
     println(snap)
 
-    val calculator = Calculator(
-        listOf(
-            { number: Int -> number + 1 },
-            { number: Int -> number * 10 }
-        ))
+    val add = { number: Int -> number + 1 }
+    val multiply = { number: Int -> number * 10 }
+
+    val calculator = Calculator(listOf(add, multiply))
 
     val calculate = calculator.calculate(1)
     println(calculate)
