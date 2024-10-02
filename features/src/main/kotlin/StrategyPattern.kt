@@ -1,10 +1,10 @@
-fun sumValues(values: List<Int>, strategy: (Int) -> Int): Int {
+inline fun sumValues(values: List<Int>, strategy: (Int) -> Int): Int {
     // OR return values.sumOf(strategy)
     // OR values.sumOf { value -> strategy(value) }
     return values.sumOf { strategy(it) }
 }
 
-fun sumValuesUsingPredicate(values: List<Int>, strategy: (Int) -> Boolean): Int {
+inline fun sumValuesUsingPredicate(values: List<Int>, strategy: (Int) -> Boolean): Int {
     // OR return values.filter(strategy).sum()
     return values.filter { value -> strategy(value) }.sum()
 }
